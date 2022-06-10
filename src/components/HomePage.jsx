@@ -21,51 +21,71 @@ export function HomePage() {
   console.log('render');
 
   const bicycleRed = {
-      name: 'bicycle',
-      color: 'red',
-      image: undefined,
-      weight: 2,
-      price: 600
+    id: 1,
+    name: 'Red Bicycle',
+    color: 'red',
+    image: 'https://media.istockphoto.com/photos/red-bicycle-picture-id106475902?k=20&m=106475902&s=612x612&w=0&h=mPHadsATohYlrJdn_Jrg0l-f_jO9YU0Xj0-j4bYEJCo=',
+    imgWidth: '360px',
+    imgHeight: '250px',
+    weight: 2,
+    price: 600
   }
 
   const bicycleBlue = {
-    name: 'bicycle',
+    id: 2,
+    name: 'Blue bicycle',
     color: 'blue',
-    weight: '3',
-    price: '400',
+    weight: 3,
+    price: 400,
     image: 'https://images.freeimages.com/images/small-previews/e3d/mountain-bike-1450482.jpg',
     imgWidth: '403.99px',
     imgHeight: '238.99px'
   }
 
   const gloves = {
-      name: 'glove',
-      color: 'black',
-      image: undefined,
-      weight: 0.2,
-      price: 20
+    id: 3,
+    name: 'Gloves',
+    color: 'black',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5eEWfnQRW1irWy-6RDGyR6k0J1wDNrLVP4Q&usqp=CAU',
+    weight: 0.2,
+    price: 20
   }
   const tShirt = {
-      name: 'tShirt',
-      color: 'white',
-      image: undefined,
-      weight: 0.1,
-      price: 100
+    id: 4,
+    name: 'T-Shirt',
+    color: 'green',
+    image: 'https://images.pexels.com/photos/5384423/pexels-photo-5384423.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    imgWidth: '190px',
+    imgHeight: '250px',
+    weight: 0.1,
+     price: 100
   }
+
+  const StoreItems = [
+    bicycleBlue,
+    bicycleRed,
+    tShirt,
+    gloves
+  ]
 
   const shoppingCardItems = []
   
   const [shoppingCardItemsArr, setShoppingCardItems] = useState(shoppingCardItems)
 
-  function handleAddItemToCard() {
-    setShoppingCardItems([...shoppingCardItemsArr, bicycleBlue])
+  function handleAddItemToCard(id) {
+    const choosenItem = StoreItems.find(item => {
+      if (item.id  === id) {
+        return item;
+      }
+    })
+    setShoppingCardItems([...shoppingCardItemsArr, choosenItem])
   }
-
+  
   return (
     <Page fullWidth>
       <Layout>
         <Layout.Section>
-          <TestShop bicycleBlue={bicycleBlue} handleAddItemToCard={handleAddItemToCard}/>
+          <TestShop StoreItems={StoreItems} handleAddItemToCard={handleAddItemToCard}/>
         </Layout.Section>
         <Layout.Section secondary>
           <ShoppingCard shoppingCardItems={shoppingCardItemsArr}/>

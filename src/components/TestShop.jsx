@@ -3,13 +3,13 @@ import ShopItem from './ShopItem'
 
 export default function TestShop(props) {
   const {
-    bicycleBlue,
+    StoreItems,
     handleAddItemToCard
   } = props
 
   return (
     <div className='wrapper__test-shop'>
-        <ShopItem bicycleBlue={bicycleBlue} handleAddItemToCard={handleAddItemToCard}/>
+        <ShopItem StoreItems={StoreItems} handleAddItemToCard={handleAddItemToCard}/>
     </div>
   )
 }

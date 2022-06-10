@@ -1,9 +1,11 @@
 .wrapper__test-shop {
-    height: 700px;
+    height: 1000px;
     background-color: rgb(233, 233, 233);
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 30px;
+    flex-flow: row wrap;
 }
 
 .wrapper__test-shop-item {
@@ -11,9 +13,8 @@
     display: flex;
     justify-content: center;
     align-items: top;
-    width: 600px;
+    width: 500px;
     height: 400px;
-    background-color: rgb(243, 243, 243);
 }
 
 .test-shop-item img {
