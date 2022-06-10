@@ -80,7 +80,11 @@ export function HomePage() {
     })
     setShoppingCardItems([...shoppingCardItemsArr, choosenItem])
   }
-  
+
+  function handleShoppingCardItemDelete(id) {
+    setShoppingCardItems(shoppingCardItemsArr.filter(item => item.id !== id))
+  }
+
   return (
     <Page fullWidth>
       <Layout>
@@ -88,7 +92,7 @@ export function HomePage() {
           <TestShop StoreItems={StoreItems} handleAddItemToCard={handleAddItemToCard}/>
         </Layout.Section>
         <Layout.Section secondary>
-          <ShoppingCard shoppingCardItems={shoppingCardItemsArr}/>
+          <ShoppingCard shoppingCardItems={shoppingCardItemsArr} handleShoppingCardItemDelete={handleShoppingCardItemDelete}/>
         </Layout.Section>
       </Layout>
     </Page>

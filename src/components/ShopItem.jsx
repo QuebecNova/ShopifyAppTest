@@ -5,7 +5,7 @@ export default function ShopItem(props) {
     StoreItems,
     handleAddItemToCard
   } = props
-  console.log(StoreItems.map(item => console.log(item)));
+
     return (
       StoreItems.map((item)=> (
         <div className='wrapper__test-shop-item' key={item.id}>
