@@ -6,7 +6,11 @@ export default function ShoppingCardItem({item, handleShoppingCardItemDelete}) {
         <div className='shopping-card__item-name'>{item.name}</div>
         <img src={item.image}/>
         <div className='shopping-card__item-price'>Price: {item.price}$</div>
-        <button className='btn shopping-card__item-btn-delete' onClick={() => handleShoppingCardItemDelete(item.id)}>&times;</button>
+        <button 
+          className='btn shopping-card__item-btn-delete' 
+          onClick={() => handleShoppingCardItemDelete(item.id)}
+          >&times;
+        </button>
     </div>
   )
 }

@@ -9,7 +9,10 @@ export default function TestShop(props) {
 
   return (
     <div className='wrapper__test-shop'>
-        <ShopItem StoreItems={StoreItems} handleAddItemToCard={handleAddItemToCard}/>
+        <ShopItem 
+          StoreItems={StoreItems} 
+          handleAddItemToCard={handleAddItemToCard}
+        />
     </div>
   )
 }

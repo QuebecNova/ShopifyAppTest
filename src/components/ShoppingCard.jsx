@@ -20,7 +20,11 @@ export default function ShoppingCard({shoppingCardItems, handleShoppingCardItemD
         <p>Shopping card</p>
         <div className='wrapper__shoping-card-items'>
             {shoppingCardItems.map((item, index) => {
-                return <ShoppingCardItem item={item} key={index} handleShoppingCardItemDelete={handleShoppingCardItemDelete}/>
+                return <ShoppingCardItem 
+                    item={item} 
+                    key={index} 
+                    handleShoppingCardItemDelete={handleShoppingCardItemDelete}
+                />
             })}
         </div>
         {displayPrice()}

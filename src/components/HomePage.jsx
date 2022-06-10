@@ -17,9 +17,7 @@ import ShoppingCard from "./ShoppingCard";
 import TestShop from "./TestShop";
 
 export function HomePage() {
-
-  console.log('render');
-
+  
   const bicycleRed = {
     id: 1,
     name: 'Red Bicycle',
@@ -89,10 +87,16 @@ export function HomePage() {
     <Page fullWidth>
       <Layout>
         <Layout.Section>
-          <TestShop StoreItems={StoreItems} handleAddItemToCard={handleAddItemToCard}/>
+          <TestShop 
+            StoreItems={StoreItems} 
+            handleAddItemToCard={handleAddItemToCard}
+          />
         </Layout.Section>
         <Layout.Section secondary>
-          <ShoppingCard shoppingCardItems={shoppingCardItemsArr} handleShoppingCardItemDelete={handleShoppingCardItemDelete}/>
+          <ShoppingCard 
+            shoppingCardItems={shoppingCardItemsArr} 
+            handleShoppingCardItemDelete={handleShoppingCardItemDelete}
+          />
         </Layout.Section>
       </Layout>
     </Page>
