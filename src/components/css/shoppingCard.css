@@ -1,13 +1,17 @@
 .wrapper__shopping-card {
-    background-color: rgb(218, 218, 218);
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background-color: rgb(226, 226, 226);
     height: 300px;
     width: 400px;
     border-radius: 10px;
 }
 
 .wrapper__shoping-card-items {
-    height: 70%;
+    justify-self: center;
+    width: 95%;
     overflow: auto;
+    border-radius: 5px;
 }
 
 .wrapper__shopping-card p {
@@ -20,7 +24,7 @@
     border-bottom: 1px solid black;
     border-radius: 5px;
     height: 40%;
-    background-color: #cacaca;
+    background-color: white;
 }
 
 .shopping-card__item-name {
@@ -34,4 +38,9 @@
     margin-right: 5px;
     background-color: inherit;
     cursor: pointer;
+}
+
+.shopping-card__overall-price {
+    margin-top: 20px;
+    font-size: 1.5em;
 }
