@@ -19,6 +19,7 @@
 
 .test-shop-item img {
     margin-top: 20px;
+    border-radius: 20px;
 }
 
 .test-shop-item p {
