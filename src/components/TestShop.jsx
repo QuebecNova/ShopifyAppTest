@@ -4,7 +4,8 @@ import ShopItem from './ShopItem'
 export default function TestShop(props) {
   const {
     StoreItems,
-    handleAddItemToCard
+    handleAddItemToCard,
+    dragStart
   } = props
 
   return (
@@ -12,6 +13,7 @@ export default function TestShop(props) {
         <ShopItem 
           StoreItems={StoreItems} 
           handleAddItemToCard={handleAddItemToCard}
+          dragStart={dragStart}
         />
     </div>
   )

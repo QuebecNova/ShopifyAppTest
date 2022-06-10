@@ -2,7 +2,13 @@ import React from 'react'
 
 import ShoppingCardItem from './ShoppingCardItem'
 
-export default function ShoppingCard({shoppingCardItems, handleShoppingCardItemDelete}) {
+export default function ShoppingCard(props) {
+    const {
+        shoppingCardItems,
+        handleShoppingCardItemDelete,
+        dragOver,
+        dragDrop
+    } = props
 
     let overallPrice = 0;
 
@@ -16,7 +22,7 @@ export default function ShoppingCard({shoppingCardItems, handleShoppingCardItemD
     }
 
   return (
-    <div className='wrapper__shopping-card'>
+    <div className='wrapper__shopping-card' onDragOver={(e) => dragOver(e)} onDrop={(e) => dragDrop(e)}>
         <p>Shopping card</p>
         <div className='wrapper__shoping-card-items'>
             {shoppingCardItems.map((item, index) => {

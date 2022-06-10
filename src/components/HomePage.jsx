@@ -11,13 +11,13 @@ import {
 
 import './css/index.css'
 
-import React, {useState} from "react";
+import React, {useState, useRef} from "react";
 
 import ShoppingCard from "./ShoppingCard";
 import TestShop from "./TestShop";
 
 export function HomePage() {
-  
+
   const bicycleRed = {
     id: 1,
     name: 'Red Bicycle',
@@ -76,11 +76,32 @@ export function HomePage() {
         return item;
       }
     })
+
     setShoppingCardItems([...shoppingCardItemsArr, choosenItem])
   }
 
   function handleShoppingCardItemDelete(id) {
     setShoppingCardItems(shoppingCardItemsArr.filter(item => item.id !== id))
+  }
+
+  function dragStart (e, id) {
+    e.dataTransfer.setData('id', id)
+  }
+
+  function dragOver (e) {
+    e.preventDefault()
+  }
+
+  function dragDrop (e) {
+    e.target.classList.remove('item-dragged-over')
+    const id = e.dataTransfer.getData('id')
+    const choosenItem = StoreItems.find(item => {
+      if (item.id  == id) {
+        return item;
+      }
+    })
+
+    setShoppingCardItems([...shoppingCardItemsArr, choosenItem])
   }
 
   return (
@@ -90,12 +111,15 @@ export function HomePage() {
           <TestShop 
             StoreItems={StoreItems} 
             handleAddItemToCard={handleAddItemToCard}
+            dragStart={dragStart}
           />
         </Layout.Section>
         <Layout.Section secondary>
           <ShoppingCard 
             shoppingCardItems={shoppingCardItemsArr} 
             handleShoppingCardItemDelete={handleShoppingCardItemDelete}
+            dragOver={dragOver}
+            dragDrop={dragDrop}
           />
         </Layout.Section>
       </Layout>
