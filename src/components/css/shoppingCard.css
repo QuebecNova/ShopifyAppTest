@@ -1,0 +1,22 @@
+.wrapper__shopping-card {
+    background-color: rgb(218, 218, 218);
+    height: 300px;
+    width: 400px;
+    border-radius: 10px;
+}
+
+.wrapper__shoping-card-items {
+    height: 60%;
+}
+
+.wrapper__shopping-card p {
+    border-bottom: 1px solid black;
+}
+
+
+.shopping-card__item {
+    border-bottom: 1px solid black;
+    border-radius: 5px;
+    height: 40%;
+    background-color: #cacaca;
+}
