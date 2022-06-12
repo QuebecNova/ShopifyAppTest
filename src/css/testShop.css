@@ -1,5 +1,4 @@
 .wrapper__test-shop {
-    height: 1000px;
     background-color: rgb(233, 233, 233);
     display: flex;
     justify-content: center;
@@ -27,7 +26,7 @@
     font-size: 2em;
 }
 
-.test-shop-add-to-card-button {
+.test-shop-add-to-cart-button {
     position: absolute;
     bottom: 0;
     margin-bottom: 50px;
@@ -36,10 +35,10 @@
     border-radius: 5px;
 }
 
-.test-shop-add-to-card-button:hover {
+.test-shop-add-to-cart-button:hover {
     background-color: rgb(109, 143, 189);
 }
 
-.test-shop-add-to-card-button:active {
+.test-shop-add-to-cart-button:active {
     background-color: rgb(85, 117, 163);
 }

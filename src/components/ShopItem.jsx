@@ -1,11 +1,10 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { ShopContext } from './Home'
+import StoreItems from '../data/products.js';
 
-export default function ShopItem(props) {
-  const {
-    StoreItems,
-    handleAddItemToCard,
-    dragStart
-  } = props
+export default function ShopItem() {
+
+  const { actions } = useContext(ShopContext)
 
     return (
       StoreItems.map((item)=> (
@@ -18,13 +17,13 @@ export default function ShopItem(props) {
                 width={item.imgWidth}  
                 height={item.imgHeight}
                 draggable
-                onDragStart={(e) => dragStart(e, item.id)}
+                onDragStart={(e) => actions.dragStart(e, item.id)}
                 />
           </div>
           <button 
-            className='btn test-shop-add-to-card-button'
-            onClick={() => handleAddItemToCard(item.id)}
-            >Add to shopping card
+            className='btn test-shop-add-to-cart-button'
+            onClick={() => actions.handleAddItemToCart(item.id)}
+            >Add to shopping cart
           </button>
         </div>
     ))
