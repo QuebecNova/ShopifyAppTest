@@ -38,7 +38,6 @@ export default function EmptyStatePage() {
       },
     
       dragDrop (e) {
-        e.target.classList.remove('item-dragged-over')
         const id = e.dataTransfer.getData('id')
         const choosenItem = StoreItems.find(item => {
           if (item.id  == id) {
